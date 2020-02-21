@@ -24,13 +24,13 @@ choose fries not lives
 end speciesism
 ```
   - You can edit the list of possible slogans on the plugin administration page.
-    - (credit to peterberbecs' [Keywords, Charset & Length](https://github.com/peterberbec/yourls-keyword_charset_length) plugin for the base of the settings page)
+    - (Credit to peterberbecs' [Keywords, Charset & Length](https://github.com/peterberbec/yourls-keyword_charset_length) plugin for the base of the settings page.)
   - Uniqueness of the URLs comes from the mixing of lower- and uppercase letters.
-    - So there are 2^n possible combinations for a n-letter-slogan, and even more when enabling numerical substitution (o => 0, i => 1, s => 5, z => 2)
+    - So there are 2^n possible combinations for an n-letter-slogan, and even more when enabling numerical substitution (o => 0, i => 1, s => 5, z => 2).
 
 ## How to install
   - In /user/plugins, create a new folder named yourls-vegan-slogans
   - Drop these files (the plugin.php) in that directory
-  - Go to the Plugins administration page ( eg https://sho.rt/admin/plugins.php ) and activate the plugin
-  - Go to the new administration page ( eg https://sho.rt/admin/plugins.php?page=vegan_slogans ) to configure
+  - Go to the Plugins administration page (e.g. https://sho.rt/admin/plugins.php) and activate the plugin
+  - Go to the new administration page (e.g. https://sho.rt/admin/plugins.php?page=vegan_slogans) to configure
   - Have fun!
