@@ -2,15 +2,10 @@
 /*
 Plugin Name: Vegan slogans
 Plugin URI: https://yourls.org/
-Description: e.g. ANimaLS-fEEl-pAiN (unique because of case sensitivity)
+Description: This plugin replaces the URL generation method with a custom one using vegan slogans, e.g. ANimaLS-fEEl-pAiN
 Version: 1.0
 Author: veganDE
 Author URI: https://reddit.com/user/veganDE
-*/
-
-/* Release History:
-*
-* 1.0 Initial release
 */
 
 // No direct call
@@ -116,21 +111,21 @@ function vegan_get_random_slogan() {
 // Hook the admin page into the 'plugins_loaded' event
 yourls_add_action('plugins_loaded', 'vegan_slogans_add_page');
 
-function vegan_slogans_add_page () {
+function vegan_slogans_add_page() {
     yourls_register_plugin_page('vegan_slogans', 'Vegan slogans', 'vegan_slogans_do_page');
 }
 
 // Display admin page
-function vegan_slogans_do_page () {
+function vegan_slogans_do_page() {
     if(isset($_POST['slogans_form'])) {
-        vegan_slogans_process ();
+        vegan_slogans_process();
     }
 
-    vegan_slogans_form ();
+    vegan_slogans_form();
 }
 
 // Display form to administrate slogans list
-function vegan_slogans_form () {
+function vegan_slogans_form() {
     $nonce = yourls_create_nonce('form_nonce');
     $liste_charset_display = htmlspecialchars(yourls_get_option('vegan_slogans', implode("\n", SloganGenerator::$default_slogans)));
     $use_numbers_display = yourls_get_option('vegan_slogans_use_numbers', true) ? "checked" : "";
@@ -152,28 +147,22 @@ function vegan_slogans_form () {
 HTML;
 }
 
-function vegan_slogans_process () {
+function vegan_slogans_process() {
     // Check nonce
     yourls_verify_nonce('form_nonce');
     
     $slogans = $_POST['slogans_form'] ;
     $use_numbers = $_POST['use_numbers_form'] ;
 
-    if (yourls_get_option('vegan_slogans') !== false)
-    {   
+    if(yourls_get_option('vegan_slogans') !== false) {   
         yourls_update_option('vegan_slogans', $slogans);
-    }
-    else
-    {
+    } else {
         yourls_add_option('vegan_slogans', $slogans);
     }
 
-    if (yourls_get_option('vegan_slogans_use_numbers') !== false)
-    {   
+    if(yourls_get_option('vegan_slogans_use_numbers') !== false) {   
         yourls_update_option('vegan_slogans_use_numbers', $use_numbers);
-    }
-    else
-    {
+    } else {
         yourls_add_option('vegan_slogans_use_numbers', $use_numbers);
     }
 
