@@ -5,7 +5,7 @@
   Showcase your moral superiority by turning every link you send to people into a vegan message.
 
 ## How does it work?
-  - This plugin replaces the URL generation method with a custom one using vegan slogans
+  - This plugin replaces the URL generation method with a custom one using vegan slogans.
   - By default there are 14 possible slogans:
 ```
 animals feel pain
